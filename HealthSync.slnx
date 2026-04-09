@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HealthSync.API/HealthSync.API.csproj" />
+    <Project Path="src/HealthSync.Application/HealthSync.Application.csproj" />
+    <Project Path="src/HealthSync.Domain/HealthSync.Domain.csproj" />
+    <Project Path="src/HealthSync.Infrastructure/HealthSync.Infrastructure.csproj" />
+  </Folder>
+</Solution>
