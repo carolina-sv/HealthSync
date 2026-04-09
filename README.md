@@ -14,20 +14,24 @@ API resiliente desenvolvida em **.NET 10** utilizando **Clean Architecture** e *
 Suba os containers necessários para o funcionamento do sistema:
 
 # Banco de Dados (PostgreSQL)
+```bash
 docker run -d --name HealthSyncDb -p 5432:5432 -e POSTGRES_PASSWORD=sua_senha -d postgres
-
+```
 # Mensageria (RabbitMQ com Painel Management)
+```bash
 docker run -d --name HealthSync_RabbitMQ -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-
+```
 ### 2. Configuração de Segurança (User Secrets)
 As credenciais de banco estão ocultas por segurança. Configure sua string de conexão localmente:
-
+```bash
 cd src/HealthSync.API
 dotnet user-secrets init
 dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Host=localhost;Port=5432;Database=HealthSyncDb;Username=postgres;Password=sua_senha"
-
+```
 ### 3. Execução
+```bash
 dotnet run --project src/HealthSync.API
+```
 
 ## Endpoints Principais
 - **POST /api/Patients**: Cadastra um novo paciente (necessário para agendamentos).
